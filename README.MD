@@ -9,7 +9,7 @@
 
 1. **Linux**
     
-    1. *Copy-paste* folder `theme` ke dalam *directory* `~/texmf/tex/latex/`
+    1. *Copy-paste* folder `ElektroITK` yang ada di dalam folder `beamer` ke dalam *directory* `~/texmf/tex/latex/`
 
 2. **Windows**
 
