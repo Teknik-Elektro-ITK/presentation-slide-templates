@@ -2,8 +2,8 @@
 
 ## Keterangan folder:
 
-1. beamer version
-2. powerpoint version
+1. beamer: format beamer latex
+2. powerpoint: format microsoft powerpoint
 
 ## Cara Installasi Beamer Theme
 
