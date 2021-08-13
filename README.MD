@@ -7,5 +7,9 @@
 
 ## Cara Installasi Beamer Theme
 
-1. *Copy-paste* folder `theme` ke dalam *directory* `~/texmf/tex/latex/`
+1. *Linux*
+    
+    1. *Copy-paste* folder `theme` ke dalam *directory* `~/texmf/tex/latex/`
+
+2. *Windows*
 
