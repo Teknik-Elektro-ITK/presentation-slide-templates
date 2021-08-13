@@ -6,4 +6,5 @@
 *.out
 *.snm
 *.synctex.gz
-*.tocmaster_slide.pdf
+*.toc
+master_slide.pdf
