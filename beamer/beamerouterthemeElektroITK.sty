@@ -62,12 +62,12 @@
 
 \ifthenelse{ \boolean{beamer@dark} \OR \boolean{beamer@darktitle} }
 % then
-{\pgfdeclareimage[width=\paperwidth]{uaBackgroundDark}{uaBackgroundDarkBlue}}
+{\pgfdeclareimage[width=\paperwidth]{itk_bg_yes}{bg_itk}}
 %else
 {}
 
 \ifbeamer@dark%
-  \pgfdeclareimage[width=\paperwidth]{uaBackgroundLight}{uaBackgroundLightBlue}
+  \pgfdeclareimage[width=\paperwidth]{itk_bg_no}{bg_blue}
 \else%
   \newlength{\wavewidth}
   \setlength{\wavewidth}{11.6352cm}% 9.09in* 64/127 *2.54cm/in
@@ -258,9 +258,9 @@
   % *** THEN ***
   {%
     \ifnum\c@framenumber=1%
-      \pgfuseimage{uaBackgroundDark}
+      \pgfuseimage{itk_bg_yes}
     \else%
-      \pgfuseimage{uaBackgroundLight}%
+      \pgfuseimage{itk_bg_no}%
     \fi%
   }
   % *** ELSE ***
