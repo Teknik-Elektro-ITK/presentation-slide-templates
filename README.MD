@@ -3,7 +3,7 @@
 ## Keterangan folder:
 
 1. beamer: format beamer latex
-2. powerpoint: format microsoft powerpoint
+2. powerpoint: format microsoft office powerpoint
 
 ## Cara Installasi Beamer Theme
 
@@ -13,6 +13,6 @@
 
 2. **Windows**
 
-    1. Jika menggunakan MiKTeX, *Copy-paste* folder `ElektroITK` yang ada di dalam folder `beamer` ke dalam *directory* `C:\Users\<nama_user>\AppData\Local\Programs\MiKTeX\tex\latex`
+    1. *Copy-paste* folder `ElektroITK` yang ada di dalam folder `beamer` ke dalam *directory* `C:\Users\<nama_user>\AppData\Local\Programs\MiKTeX\tex\latex`
 
     2. Buka MiKTeX Console, pilih `Tasks > Refresh file name database`
