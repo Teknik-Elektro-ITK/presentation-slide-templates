@@ -36,10 +36,10 @@
 \newlength{\ulogoheight}
 \setlength{\ulogoheight}{0.90066895151709692cm}% 0.70364761837273193in* 64/127 *2.54cm/in
 \ifbeamer@dark\else%
-  \newlength{\ulogopadding}
-  % padding = distance from the rightmost point of the logo to where the U starts;
-  % value approximately \ulogowidth*0.25
-  \setlength{\ulogopadding}{0.2784cm}
+\newlength{\ulogopadding}
+% padding = distance from the rightmost point of the logo to where the U starts;
+% value approximately \ulogowidth*0.25
+\setlength{\ulogopadding}{0.2784cm}
 \fi
 % ----------------------------------------------------------------------------
 % *** END DEFINE LENGTHS >>>
@@ -66,13 +66,13 @@
 {}
 
 \ifbeamer@dark%
-  \pgfdeclareimage[width=\paperwidth]{itk_bg_no}{bg_blue}
+\pgfdeclareimage[width=\paperwidth]{itk_bg_no}{bg_blue}
 \else%
-  \newlength{\wavewidth}
-  \setlength{\wavewidth}{11.6352cm}% 9.09in* 64/127 *2.54cm/in
-  \newlength{\waveheight}
-  \setlength{\waveheight}{0.7936cm}% 0.62in* 64/127 *2.54cm/in
-  \pgfdeclareimage[width=\wavewidth,height=\waveheight]{uWave}{footer_itk}
+\newlength{\wavewidth}
+\setlength{\wavewidth}{11.6352cm}% 9.09in* 64/127 *2.54cm/in
+\newlength{\waveheight}
+\setlength{\waveheight}{0.7936cm}% 0.62in* 64/127 *2.54cm/in
+\pgfdeclareimage[width=\wavewidth,height=\waveheight]{uWave}{footer_itk}
 \fi
 % ----------------------------------------------------------------------------
 % *** END DEFINE IMAGES <<<
@@ -84,38 +84,38 @@
 % *** HEADLINE <<<
 % ----------------------------------------------------------------------------
 \ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }{%
-  \defbeamertemplate*{headline}{ua theme}%
-  {
-    % page number
-    \ifbeamer@framenumber%
-      \ifnum\c@framenumber=1\else
-       \pgftext[right,top,at=\pgfpoint{\paperwidth-\margin}{-0.04\paperheight}]{%
-          \usebeamerfont{frame number in head}%
-          \usebeamercolor[fg]{frame number in head}%
-          \insertframenumber{}%
-          \ifbeamer@totalframenumber%
-            /\inserttotalframenumber%
-          \fi
-        }%
-      \fi
-    \fi%
-  }%
+	\defbeamertemplate*{headline}{ua theme}%
+	{
+		% page number
+		\ifbeamer@framenumber%
+		\ifnum\c@framenumber=1\else
+		\pgftext[right,top,at=\pgfpoint{\paperwidth-\margin}{-0.04\paperheight}]{%
+			\usebeamerfont{frame number in head}%
+			\usebeamercolor[fg]{frame number in head}%
+			\insertframenumber{}%
+			\ifbeamer@totalframenumber%
+			/\inserttotalframenumber%
+			\fi
+		}%
+		\fi
+		\fi%
+	}%
 }{
-  \newlength{\logotopmargin}%
-  \setlength{\logotopmargin}{0.704cm}%  0.55in* 64/127 *2.54cm/in
-  \defbeamertemplate*{headline}{ua theme}%
-  {%
-    % TODO Don't \vskip if the title is too long!
-    \vskip\logotopmargin%
-    \hskip\margin%
-    \ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }
-    {%
-      \vskip5cm% TODO: get rid of this quirk
-    }
-    {%
-      \pgfuseimage{ULogo}%
-    }
-  }
+	\newlength{\logotopmargin}%
+	\setlength{\logotopmargin}{0.704cm}%  0.55in* 64/127 *2.54cm/in
+	\defbeamertemplate*{headline}{ua theme}%
+	{%
+		% TODO Don't \vskip if the title is too long!
+		\vskip\logotopmargin%
+		\hskip\margin%
+		\ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }
+		{%
+			\vskip1cm% TODO: get rid of this quirk -- NILAI ASLINYA ADALAH 5
+		}
+		{%
+			\pgfuseimage{ULogo}%
+		}
+	}
 }
 % ----------------------------------------------------------------------------
 % *** END HEADLINE <<<
@@ -128,45 +128,45 @@
 % ----------------------------------------------------------------------------
 \newlength\frametitletopmargin
 \ifbeamer@compress%
-  \setlength{\frametitletopmargin}{0.384cm}% 0.3in* 64/127 *2.54cm/in
+\setlength{\frametitletopmargin}{0.384cm}% 0.3in* 64/127 *2.54cm/in
 \else
-  \setlength{\frametitletopmargin}{0.9472cm}% 0.74in* 64/127 *2.54cm/in
+\setlength{\frametitletopmargin}{0.9472cm}% 0.74in* 64/127 *2.54cm/in
 \fi
 
 \ifbeamer@dark\else%
-  \newlength{\frametitlewidth}
-  \setlength{\frametitlewidth}{\textwidth-\ulogowidth-\ulogopadding}
+\newlength{\frametitlewidth}
+\setlength{\frametitlewidth}{\textwidth-\ulogowidth-\ulogopadding}
 \fi
 
 \defbeamertemplate*{frametitle}{ua theme}
 {%
-  \ifbeamer@dark%
-    % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    \vskip\frametitletopmargin%
-    \raggedleft\insertframetitle\par%
-    % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  \else%
-    \ifbeamer@compress%
-      \nointerlineskip%
-      \vskip-\ulogoheight%
-      \vbox to \ulogoheight{%
-        \vfil%
-        \leftskip=\ulogowidth%
-        \advance\leftskip by\ulogopadding%
-        % TODO To date (July 4, 2010), the beamer class cannot deal with actual
-        %      variables as arguments to "right". Hence, use the literal.
-        \begin{beamercolorbox}[right=1.1136cm]{frame title}%
-        \hfill\insertframetitle\par%
-        \end{beamercolorbox}%
-        \vfil%
-      }%
-    \else%
-      \medskip%
-      \begin{beamercolorbox}[right]{frame title}%
-        \insertframetitle\par%
-      \end{beamercolorbox}%
-    \fi%
-  \fi%
+	\ifbeamer@dark%
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	\vskip\frametitletopmargin%
+	\raggedleft\insertframetitle\par%
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	\else%
+	\ifbeamer@compress%
+	\nointerlineskip%
+	\vskip-\ulogoheight%
+	\vbox to \ulogoheight{%
+		\vfil%
+		\leftskip=\ulogowidth%
+		\advance\leftskip by\ulogopadding%
+		% TODO To date (July 4, 2010), the beamer class cannot deal with actual
+		%      variables as arguments to "right". Hence, use the literal.
+		\begin{beamercolorbox}[right=1.1136cm]{frame title}%
+			\hfill\insertframetitle\par%
+		\end{beamercolorbox}%
+		\vfil%
+	}%
+	\else%
+	\medskip%
+	\begin{beamercolorbox}[right]{frame title}%
+		\insertframetitle\par%
+	\end{beamercolorbox}%
+	\fi%
+	\fi%
 }
 % ----------------------------------------------------------------------------
 % *** END FRAMETITLE >>>
@@ -199,28 +199,28 @@
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \defbeamertemplate*{footline}{ua theme dark}
 {%
-  \ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }
-  % *** THEN *** dark footline
-  {%
-    \pgftext[right,bottom,at=\posUlogoFoot]{\pgfuseimage{ULogo2}}%
-  }
-  % *** ELSE *** light footline
-  {% bottom wave
-    \pgftext[right,bottom,at=\uWavePos]{\pgfuseimage{uWave}}%
-
-    % page number
-    \ifbeamer@framenumber%
-      \ifnum\c@framenumber=1\else
-        \pgftext[right,bottom,at=\pgfpoint{0.98\paperwidth}{0.02\paperwidth}]{%
-          \usebeamerfont{frame number in foot}%
-          \usebeamercolor[fg]{frame number in foot}\insertframenumber{}%
-          \ifbeamer@totalframenumber%
-            /\inserttotalframenumber%
-          \fi
-        }%
-      \fi
-    \fi%
-    }
+	\ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }
+	% *** THEN *** dark footline
+	{%
+		\pgftext[right,bottom,at=\posUlogoFoot]{\pgfuseimage{ULogo2}}%
+	}
+	% *** ELSE *** light footline
+	{% bottom wave
+		\pgftext[right,bottom,at=\uWavePos]{\pgfuseimage{uWave}}%
+		
+		% page number
+		\ifbeamer@framenumber%
+		\ifnum\c@framenumber=1\else
+		\pgftext[right,bottom,at=\pgfpoint{0.98\paperwidth}{0.02\paperwidth}]{%
+			\usebeamerfont{frame number in foot}%
+			\usebeamercolor[fg]{frame number in foot}\insertframenumber{}%
+			\ifbeamer@totalframenumber%
+			/\inserttotalframenumber%
+			\fi
+		}%
+		\fi
+		\fi%
+	}
 }%
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -234,7 +234,7 @@
 % ----------------------------------------------------------------------------
 % set left and right text margins
 \setbeamersize{text margin left=\margin,%
-               text margin right=\margin}
+	text margin right=\margin}
 % ----------------------------------------------------------------------------
 % *** END MARGINS >>>
 % ----------------------------------------------------------------------------
@@ -246,17 +246,17 @@
 % ----------------------------------------------------------------------------
 \defbeamertemplate*{background canvas}{ua theme}
 {%
-  \ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }
-  % *** THEN ***
-  {%
-    \ifnum\c@framenumber=1%
-      \pgfuseimage{itk_bg_yes}
-    \else%
-      \pgfuseimage{itk_bg_no}%
-    \fi%
-  }
-  % *** ELSE ***
-  {}
+	\ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }
+	% *** THEN ***
+	{%
+		\ifnum\c@framenumber=1%
+		\pgfuseimage{itk_bg_yes}
+		\else%
+		\pgfuseimage{itk_bg_no}%
+		\fi%
+	}
+	% *** ELSE ***
+	{}
 }
 % ----------------------------------------------------------------------------
 % *** END BACKGROUND <<<
