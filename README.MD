@@ -1,5 +1,7 @@
 # Repo dari Master Slide Teknik Elektro ITK
 
+Beamer template ini terinspirasi dari [UA beamer theme](https://github.com/nschloe/ua-beamer) (a LaTeX beamer theme for the University of Antwerp) 
+
 ## Keterangan folder:
 
 1. beamer: format beamer latex
